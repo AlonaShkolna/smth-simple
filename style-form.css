@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+* {
+	box-sizing: border-box;
+}
+
+.form-field {
+	margin-bottom: 20px;
+	border:1px dotted #000;
+	padding:5px;
+}
+
+.tooltip {
+	position: relative;
+}
+
+.tooltip-text {
+	position: absolute;
+	visibility: hidden;
+	font-size: 15px;
+	font-style: italic;
+	background: #d9b2d8;
+	padding: 5px;
+	border-radius: 5px;
+	z-index: 1;
+	top: 27px;
+	left: 35%;
+	box-shadow: 0 0 5px plum;
+}
+
+label {
+	margin-right: 10px;	
+}
+
+.form-field input, .form-field textarea, .form-field select {
+	border: 2px solid orchid;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.form-field input[type="checkbox"]:checked {
+	background: orchid;
+}
+
+.form-field textarea {
+	resize: none;
+}
+
+.register-form, .login-form {
+	width: 400px; 
+}
+
+.register-form p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.form-buttons {
+	text-align: center;
+}
+
+.focus-tip {
+	font-size: 14px;
+	font-style: italic;
+	display: none;
+	margin:0 auto;
+}
+
+.ok-image, .error-image {
+	font-weight: bold;
+	display:none;
+}
+
+.ok-image {
+	color: green;
+}
+
+.error-image {
+	color:red;
+}
+
+.form-field input:required {
+	background: lightyellow;
+}
+
+.form-field input:focus {
+	outline: none;
+	border: 3px solid darkorchid;
+	border-radius: 5px;
+	box-shadow: 0 0 4px darkorchid;
+}
+
+.form-field textarea:focus {
+	outline: none;
+	border: 3px solid darkorchid;
+	border-radius: 5px;
+}
+
+.form-field input:focus ~ .focus-tip{
+	display:block;
+}
+
+.form-field input:focus:valid ~.ok-image{
+	display:inline;
+}
+
+.form-field input:focus:invalid ~.error-image{
+	display:inline;
+}
+
+.form-field input:hover:not(:focus) ~ .tooltip-text {
+	visibility: visible;
+}
+
+label[for^="topics"], label[for^="gender"] {
+	user-select: none;
+	position: relative;
+}
+
+input[name="topics"] {
+	display: none;
+}
+
+.topics-checkmark {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background-color: #e1c1e1;
+	margin-right: 5px;
+}
+
+.topics-checkmark::after {
+	content: '\2714';
+	position: absolute;
+	color: darkorchid;
+	top: -4px;
+	left: 1px;
+	display: none;
+}
+
+input[name="topics"]:checked +label>.topics-checkmark {
+	background: plum;
+	box-shadow: 0 0 1px darkorchid;
+}
+
+input[name="topics"]:checked +label>.topics-checkmark::after {
+	display: block;
+}
+
+input[name="gender"] {
+	visibility: hidden;
+}
+
+label[for^="gender"]::before {
+	content: '';
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: plum;
+	position: absolute;
+	display: block;
+	top: 1px;
+	left: -22px;
+}
+
+input[name="gender"]:checked + label::before {
+	content: '\2022';
+	text-align: center;
+	line-height: 15px;
+	background: darkorchid;
+	color: white;
+}

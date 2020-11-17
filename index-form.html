@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Forms</title>
+	<link rel="stylesheet" type="text/css" href="style-form.css">
+	<script src="https://kit.fontawesome.com/f9f11526ad.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<!-- Registration form -->
+	<!-- Validation -->
+	<form action="" method="">		
+		<fieldset class="register-form">
+			<legend><h2>Registration Form</h2></legend>
+			<div class="form-field tooltip">
+				<label for="username">UserName *:</label>
+				<input title=""
+					   type="text" 
+					   id="username"
+					   name="username"
+					   minlength="3"
+					   maxlength="10"
+					   required>				
+				<div class="ok-image">
+					<i class="fas fa-check"></i>
+				</div>
+				<div class="error-image">
+					<i class="fas fa-times"></i>
+				</div>
+				<p class="focus-tip">UserName must contain at least 3 and no more than 10 characters</p>
+				<p class="tooltip-text">Your UserName will be used to log in</p>
+			</div>
+			<div class="form-field">	
+				<label for="fname">First name *:</label>
+				<input type="text" 
+					   id="fname" 
+					   name="fname"
+					   required>
+			</div>	   
+			<div class="form-field">
+				<label for="lname">Last name *:</label>
+				<input type="text"
+					   id="lname"
+					   name="lname"
+					   required>
+			</div>
+			<div class="form-field">
+				<label for="email">Enter your email *:</label>
+				<input type="email" 
+					   id="email"
+					   name="email"
+					   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+					   required>
+				<div class="ok-image">
+					<i class="fas fa-check"></i>
+				</div>
+				<div class="error-image">
+					<i class="fas fa-times"></i>
+				</div>
+			</div>
+			<div class="form-field">
+				<label for="password">Enter your password *:</label>
+				<input type="password"
+					   id="password"
+					   name="password"
+					   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+					   required>
+				<div class="ok-image">
+					<i class="fas fa-check"></i>
+				</div>
+				<div class="error-image">
+					<i class="fas fa-times"></i>
+				</div>
+				<p class="focus-tip">Please make sure your password contains at least one  number and one uppercase and lowercase letter, and at least 8 or more characters</p>
+			</div>	
+			<div class="form-field">	
+				<label for="conf-password">Confirm your password *:</label>
+				<input type="password"
+					   id="conf-password"
+					   name="conf-password"
+					   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+					   required>
+				<div class="ok-image">
+					<i class="fas fa-check"></i>
+				</div>
+				<div class="error-image">
+					<i class="fas fa-times"></i>
+				</div>
+			</div>
+			<!-- Validation -->
+			<h3>Additional information:</h3>
+			<div class="form-field gender">
+				<p>Select your gender:</p>
+				<input type="radio" 
+					   name="gender"
+					   value="Male"
+					   id="gender-male" 
+					   checked>
+				<label for="gender-male" class="gender-male">Male</label>
+				<input type="radio"
+					   name="gender"
+					   value="Female"
+					   id="gender-female">
+				<label for="gender-female" class="gender-female">Female</label>
+				<input type="radio"
+					   name="gender"
+					   value="Other"
+					   id="gender-other">
+				<label for="gender-other" class="gender-other">Other</label>
+			</div>
+			<div class="form-field">
+				<label for="birthdate">Enter your birthdate:</label>
+				<input type="date" 
+					   name="birthdate" 
+					   id="birthdate">
+			</div>
+			<div class="form-field">
+				<label for="country">Select your country:</label>
+				<select name="country" id="country">
+					<option value="ukraine">Ukraine</option>
+					<option value="russia">Russia</option>
+					<option value="poland">Poland</option>
+					<option value="spain">Spain</option>
+				</select>
+			</div>
+			<div class="form-field">
+				<label for="city">Select your city:</label>
+				<input type="text" list="city">
+				<datalist id="city" name="city">
+					<option value="Kyiv">
+					<option value="Lviv">
+					<option value="Moscow">
+					<option value="Warsaw">
+					<option value="Krakow">
+					<option value="Madrid">
+				</datalist>
+			</div>
+			<div class="form-field">
+				<p>Please select topics you are interested in:</p>
+				<input type="checkbox" name="topics" value="sport" id="topics-sport">				
+				<label for="topics-sport">
+					<span class="topics-checkmark"></span>
+					Sport
+				</label>
+				<input type="checkbox" name="topics" value="nature" id="topics-nature">				
+				<label for="topics-nature">
+					<span class="topics-checkmark"></span>
+					Nature
+				</label>
+				<input type="checkbox" name="topics" value="travels" id="topics-travels">				
+				<label for="topics-travels">
+					<span class="topics-checkmark"></span>
+					Travels
+				</label>
+				<input type="checkbox" name="topics" value="cats" id="topics-cats">				
+				<label for="topics-cats">
+					<span class="topics-checkmark"></span>
+					Cats
+				</label>
+			</div>
+			<div class="form-field">
+				<p>You can upload a picture for your avatar (size must be not more than 100x100 pixels)</p>
+				<label for="avatar">Select file:</label>
+				<input type="file" id="avatar" name="avatar">
+				<input type="submit" name="submit-pic" value="Upload">
+			</div>
+			
+			<div class="form-field">
+				<p><label for="telno">For better authentication level please enter your phone number</label></p>
+				<input type="tel"
+					   id="telno"
+					   name="telno"
+					   placeholder="Format: 38-011-123-12-12" 
+					   pattern="[0-9]{2}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}">
+			</div>
+			<div class="form-field">
+				<textarea name="comment" cols="30" rows="10" placeholder="Here you can tell smth about yourself :)"></textarea>
+			</div>
+			<div class="form-buttons">
+				<input type="submit" name="submit" value="Register">
+				<input type="reset" name="reset" value="Reset">
+			</div>
+		</fieldset>
+	</form>
+	<!-- Registration form -->
+	<!-- Login form -->
+	<form action="" method="">
+		<fieldset class="login-form">
+			<legend><h2>Login Form</h2></legend>
+			<div class="form-field">
+				<label for="login">Enter your email</label>
+				<input type="email" 
+					   id="login" 
+					   name="login"
+					   required>
+			</div>
+			<div class="form-field">
+				<label for="login-password">Enter your password</label>
+				<input type="password" 
+					   id="login-password" 
+					   name="login-password"
+					   required>
+			</div>
+			<div class="form-buttons">
+				<input type="button" 
+					   name="login" 
+					   value="Log in">
+			</div>
+		</fieldset>
+	</form>
+	<!-- Login form -->
+</body>
+</html>
